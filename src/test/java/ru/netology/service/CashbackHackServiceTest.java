@@ -8,20 +8,11 @@ import static org.testng.Assert.*;
 public class CashbackHackServiceTest {
 
     @Test
-    public void shouldReturn800ThenAmountIs1200() {
-        CashbackHackService cbh = new CashbackHackService();
-        int amount = 1200;
-        int actual = cbh.remain(amount);
-        int expected = 800;
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void shouldReturn1000ThenAmountIs1000() {
+    public void shouldReturn0ThenAmountIs1000() {
         CashbackHackService cbh = new CashbackHackService();
         int amount = 1000;
         int actual = cbh.remain(amount);
-        int expected = 1000;
+        int expected = 0;
         assertEquals(actual, expected);
     }
 
@@ -31,6 +22,15 @@ public class CashbackHackServiceTest {
         int amount = 0;
         int actual = cbh.remain(amount);
         int expected = 1000;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldReturn500ThenAmountIs500() {
+        CashbackHackService cbh = new CashbackHackService();
+        int amount = 500;
+        int actual = cbh.remain(amount);
+        int expected = 500;
         assertEquals(actual, expected);
     }
 }
